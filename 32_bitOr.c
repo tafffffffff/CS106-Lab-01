@@ -9,7 +9,12 @@
  */
 int bitOr(int x, int y)
 {
-    return 2;
+    // 0101
+    // 1010
+    // 1111
+
+    return ~(~x & ~y);
+    // ~x & ~y return 0s that are in both x and y 
 }
 
 int test_bitOr(int x, int y)

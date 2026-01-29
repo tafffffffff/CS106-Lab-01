@@ -8,7 +8,10 @@
  */
 int thirdBits(void)
 {
-    return 2;
+    // 1001<<3
+    // 0 1001 001 0 0100 1001
+    // 0x9249
+    return ((0x49 << 9) | 0x49) << 9 | ;
 }
 
 int test_thirdBits(void)

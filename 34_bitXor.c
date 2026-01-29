@@ -9,7 +9,10 @@
  */
 int bitXor(int x, int y)
 {
-    return 2;
+    return ~((~(x & y) & (~x&~y)));
+    // x & y is in both x and y
+    // ~(x & y) not in both x and y
+    // ~x & ~y return value that is not in both x and y
 }
 
 int test_bitXor(int x, int y)
