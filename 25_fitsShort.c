@@ -12,6 +12,11 @@ int fitsShort(int x)
 {
     return !(((x<<16)>>16)^x);
     // !((x>>16)^(x>>15))
+    // ABCD EFGH IJKL MNOP
+    //           ABCD EFGH
+    //           BCDE FGHI
+    // this check whether from I to A the bits are the same
+    // 0000 0000 1111 1111
 }
 
 int test_fitsShort(int x)
@@ -22,7 +27,7 @@ int test_fitsShort(int x)
 
 int main(void)
 {
-    int x = 0x0FFF;
+    int x = 0x00007FFF;
     printf("expected: %x\n", fitsShort(x));
     printf("actual  : %x\n", test_fitsShort(x));
 }
